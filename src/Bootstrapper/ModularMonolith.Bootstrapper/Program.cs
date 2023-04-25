@@ -1,9 +1,13 @@
+using ModularMonolith.Modules.Conferences.Api;
+using ModularMonolith.Shared.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+builder.Services
+    .AddInfrastructure()
+    .AddConferences();
 
 var app = builder.Build();
 
-app.MapControllers();
-app.MapGet("/", () => "ModularMonolith API !!");
+app.UseInfrastructure();
 
 app.Run();
