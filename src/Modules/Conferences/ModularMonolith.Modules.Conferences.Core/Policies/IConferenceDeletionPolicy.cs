@@ -2,13 +2,11 @@
 //  Copyright (c) 2012-2021 by Bystronic Laser AG, CH-3362 Niederoenz
 // --------------------------------------------------------------------------------
 
-using Microsoft.AspNetCore.Mvc;
+using ModularMonolith.Modules.Conferences.Core.Entities;
 
-namespace ModularMonolith.Modules.Conferences.Api.Controllers;
+namespace ModularMonolith.Modules.Conferences.Core.Policies;
 
-[Route(BasePath)]
-internal class HomeController : BaseController
+public interface IConferenceDeletionPolicy
 {
-    [HttpGet]
-    public ActionResult<string> Get() => "Conferences API";
+    Task<bool> CanDeleteAsync(Conference conference);
 }

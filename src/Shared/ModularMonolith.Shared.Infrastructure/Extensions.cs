@@ -5,6 +5,7 @@
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using ModularMonolith.Shared.Abstractions;
 using ModularMonolith.Shared.Infrastructure.Api;
 
 [assembly:InternalsVisibleTo("ModularMonolith.Bootstrapper")]
@@ -15,6 +16,7 @@ internal static class Extensions
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services
+            .AddSingleton<IClock, Clock>()
             .AddControllers()
             .ConfigureApplicationPartManager(manager =>
             {

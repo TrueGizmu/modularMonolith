@@ -2,13 +2,14 @@
 //  Copyright (c) 2012-2021 by Bystronic Laser AG, CH-3362 Niederoenz
 // --------------------------------------------------------------------------------
 
-using Microsoft.AspNetCore.Mvc;
+using ModularMonolith.Shared.Abstractions;
 
-namespace ModularMonolith.Modules.Conferences.Api.Controllers;
+namespace ModularMonolith.Shared.Infrastructure;
 
-[Route(BasePath)]
-internal class HomeController : BaseController
+public class Clock : IClock
 {
-    [HttpGet]
-    public ActionResult<string> Get() => "Conferences API";
+    public DateTime CurrentDate()
+    {
+        return DateTime.UtcNow;
+    }
 }
