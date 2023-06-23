@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolith.Bootstrapper", "src\Bootstrapper\ModularMonolith.Bootstrapper\ModularMonolith.Bootstrapper.csproj", "{44C775F1-2DB6-4A1D-8767-58ED774CEFD3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AEBDB334-180F-4703-8FDD-6F75B96C21D4}"
+	ProjectSection(SolutionItems) = preProject
+		src\ModularMonolitr.rest = src\ModularMonolitr.rest
+		src\http-client.env.json = src\http-client.env.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D8544BCC-CEA6-46EA-94B1-62DC89EC8DB0}"
 EndProject

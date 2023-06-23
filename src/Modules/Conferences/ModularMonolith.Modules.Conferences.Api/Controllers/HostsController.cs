@@ -8,7 +8,6 @@ using ModularMonolith.Modules.Conferences.Core.Services;
 
 namespace ModularMonolith.Modules.Conferences.Api.Controllers;
 
-[Route(BasePath + "/[controller]")]
 internal class HostsController : BaseController
 {
     private readonly IHostService _hostService;
@@ -34,7 +33,7 @@ internal class HostsController : BaseController
     public async Task<ActionResult> Add(HostDetailsDto host)
     {
         await _hostService.AddAsync(host);
-        return new CreatedAtActionResult(nameof(Get), nameof(HostsController), new { id = host.Id }, null);
+        return new CreatedAtActionResult(nameof(Get),  null, new { id = host.Id }, host);
     }
 
     [HttpPut("{id:guid}")]

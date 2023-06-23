@@ -18,8 +18,10 @@ internal static class Extensions
         services
             .AddSingleton<IHostRepository, InMemoryHostRepository>()
             .AddSingleton<IHostDeletionPolicy, HostDeletionPolicy>()
+            .AddScoped<IHostService, HostService>()
             .AddSingleton<IConferenceDeletionPolicy, ConferenceDeletionPolicy>()
-            .AddScoped<IHostService, HostService>();
+            .AddSingleton<IConferenceRepository, InMemoryConferenceRepository>()
+            .AddScoped<IConferenceService, ConferenceService>();
         
         return services;
     }

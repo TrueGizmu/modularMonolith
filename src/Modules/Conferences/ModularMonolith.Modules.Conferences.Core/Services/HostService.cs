@@ -47,7 +47,6 @@ internal class HostService : IHostService
             Id = x.Id,
             HostId = x.HostId,
             HostName = x.Host.Name,
-            Description = x.Description,
             Name = x.Name,
             From = x.From,
             Location = x.Location,

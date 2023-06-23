@@ -1,0 +1,69 @@
+### Add new host
+POST {{url}}/hosts
+Content-Type: application/json
+
+{
+  "name": "Host H1",
+  "description": "Super host H1"
+}
+
+### Update host
+PUT {{url}}/hosts/b7239b1e-ca65-4ebe-8a45-59f19f58d5e1
+Content-Type: application/json
+
+{
+  "name": "Host XXL",
+  "description": "Super wielki host"
+}
+
+### Get all hosts
+
+GET {{url}}/hosts
+Accept: application/json
+
+### Get Host by id
+
+GET {{url}}/hosts/0b42e0c6-82d1-4fa1-b14a-b69afc66dc3e
+Accept: application/json
+
+### Delete host
+DELETE {{url}}/hosts/ab080ba0-0e07-4c7f-89b2-53f14388a4e9
+###############################################################
+### Add new conference
+POST {{url}}/Conferences
+Content-Type: application/json
+
+{
+  "name": "Conference C1",
+  "description": "Same nudy",
+  "hostId": "b7239b1e-ca65-4ebe-8a45-59f19f58d5e1",
+  "location": "Wólka Wielka",
+  "from": "2023-05-01",
+  "to": "2023-05-03"
+}
+
+### Update conference
+PUT {{url}}/Conferences/8002f668-d8f2-4e78-87b9-49af7fdde074
+Content-Type: application/json
+
+{
+  "name": "Conference XXL",
+  "participantsLimit": "100",
+  "description": "Same nudy",
+  "from": "2023-08-01"
+}
+
+### Get all conferences
+
+GET {{url}}/Conferences
+Accept: application/json
+
+### Get Conference by id
+
+GET {{url}}/Conferences/8002f668-d8f2-4e78-87b9-49af7fdde074
+Accept: application/json
+
+### Delete conference
+DELETE {{url}}/Conferences/8002f668-d8f2-4e78-87b9-49af7fdde074
+
+
